@@ -34,7 +34,7 @@ if [ "$CMD" == "yum" -o "$CMD" == "dnf" ]; then
   if [[ "$(git --version)" == "git version 1"* ]]; then
     $SUDO $CMD remove -y git
     set +e
-    curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/enable-ius.sh | $SUDO bash
+    curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/master/enable-ius.sh | $SUDO bash
     set -e
     $SUDO $CMD install -y git2u
   fi

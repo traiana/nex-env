@@ -16,7 +16,7 @@ The rest of the solution only affects home directory:
 
 ## How To Install
 
-Run `curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/install.sh | bash`
+Run `curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/master/install.sh | bash`
 
 **NOTE:** This will ask you to `sudo` to install OS packages, if you're not root.
 
