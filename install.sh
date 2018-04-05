@@ -1,7 +1,7 @@
 #!/bin/bash -eEu
 
 PYTHON_VERSION=3.6.4
-PYTHON_REQUIREMENTS="awscli boto3~=1.6.0 cmd2~=0.8.0"
+PYTHON_REQUIREMENTS="awscli boto3~=1.6.0 cmd2~=0.8.0 git+git://github.com/arcivanov/docker-squash"
 
 if apt-get --help > /dev/null 2>&1; then
   CMD=apt-get
