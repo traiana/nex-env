@@ -15,6 +15,10 @@ elif yum --help > /dev/null 2>&1; then
 elif brew --help > /dev/null 2>&1; then
   echo "Found Darwin/OSX"
   CMD=brew
+elif [ "$(uname -s)" == "Darwin" ]; then
+  echo "Found Darwin/OSX, Installing Homebrew"
+  CMD=brew
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
   echo "Have no idea what OS I'm running on!" >&2
   exit 1
