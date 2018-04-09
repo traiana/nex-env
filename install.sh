@@ -4,11 +4,17 @@ PYTHON_VERSION=3.6.5
 PYTHON_REQUIREMENTS="awscli boto3~=1.7.0 cmd2~=0.8.0 git+git://github.com/arcivanov/docker-squash"
 
 if apt-get --help > /dev/null 2>&1; then
+  echo "Found APT-based Linux distro"
   CMD=apt-get
 elif dnf --help > /dev/null 2>&1; then
+  echo "Found DNF-based Linux distro"
   CMD=dnf
 elif yum --help > /dev/null 2>&1; then
+  echo "Found YUM-based Linux distro"
   CMD=yum
+elif brew --help > /dev/null 2>&1; then
+  echo "Found Darwin/OSX"
+  CMD=brew
 else
   echo "Have no idea what OS I'm running on!" >&2
   exit 1
@@ -47,7 +53,14 @@ if [ "$CMD" == "apt-get" ]; then
                    xz-utils tk-dev
 fi
 
-curl -Ls "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
+if [ "$CMD" == "brew" ]; then
+  brew update
+  if ! brew upgrade pyenv; then
+    brew install pyenv
+  fi
+else
+  curl -Ls "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
+fi
 
 set +u
 export PATH="$HOME/.pyenv/bin:$PATH"
