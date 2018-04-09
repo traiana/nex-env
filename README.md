@@ -4,7 +4,7 @@ This is a fire-and-forget installer for NEX Python environment.
 
 It is idempotent and can be rerun as many times as required.
 
-The solution has been verified to work on CentOS 7, Amazon Linux and Ubuntu.
+The solution has been verified to work on CentOS 7, Amazon Linux, Ubuntu and OSX.
 
 The script installs OS-level dependencies, if required, (gcc, git 2.x, make, etc),
 launching installs with `sudo` if not root.
