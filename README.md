@@ -22,6 +22,12 @@ Run `curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/master/install.s
 
 Everything else, however, will be installed into your local dir.
 
+The installer supports two options:
+* `--prereqs-only` that only installs prerequisites that may require SU privileges:
+  `curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/master/install.sh | bash -s -- --prereqs-only`
+* `--env-only` that assumes that all prerequisites are already installed and only local user environment is needed
+  `curl -Ls https://raw.githubusercontent.com/Traiana/nex-env/master/install.sh | bash -s -- --env-only`
+
 ## How To Use
 
 Activate your environment by running:
