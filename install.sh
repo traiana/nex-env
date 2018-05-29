@@ -81,6 +81,7 @@ if [ -n "$INSTALL_ENV" ]; then
     brew update
     if ! brew upgrade pyenv; then
       brew install pyenv
+      brew install pyenv-virtualenv
     fi
   else
     curl -Ls "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
