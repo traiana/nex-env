@@ -102,6 +102,6 @@ if [ -n "$INSTALL_ENV" ]; then
   pyenv activate nex
   set -u
 
-  pip install -U pip setuptools wheel
+  pip install -U pip~=9.0 setuptools wheel
   pip install -U $PYTHON_REQUIREMENTS
 fi
