@@ -1,7 +1,7 @@
 #!/bin/bash -eEu
 
 PYTHON_VERSION=3.6.5
-PYTHON_REQUIREMENTS="awscli boto3~=1.7.0 cmd2~=0.8.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon@v0.1.14"
+PYTHON_REQUIREMENTS="awscli boto3~=1.7.0 cmd2~=0.8.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon@v0.1.15"
 
 INSTALL_PREREQS=x
 INSTALL_ENV=x
@@ -97,7 +97,7 @@ if [ -n "$INSTALL_ENV" ]; then
   pyenv install -s $PYTHON_VERSION
 
   set +u
-  pyenv virtualenv-delete -f nex
+  pyenv virtualenv-delete -f nex || true
   pyenv virtualenv -f $PYTHON_VERSION nex
   pyenv activate nex
   set -u
