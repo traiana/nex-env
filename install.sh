@@ -85,6 +85,7 @@ if [ -n "$INSTALL_ENV" ]; then
     fi
   else
     curl -Ls "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
+    pyenv update
   fi
 
   set +u
@@ -93,7 +94,6 @@ if [ -n "$INSTALL_ENV" ]; then
   eval "$(pyenv virtualenv-init -)"
   set -u
 
-  pyenv update
   pyenv install -s $PYTHON_VERSION
 
   set +u
