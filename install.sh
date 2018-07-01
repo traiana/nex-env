@@ -1,6 +1,6 @@
 #!/bin/bash -eEu
 
-PYTHON_VERSION=3.6.5
+PYTHON_VERSION=3.6.6
 PYTHON_REQUIREMENTS="awscli boto3~=1.7.0 cmd2~=0.8.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon"
 
 INSTALL_PREREQS=x
@@ -85,7 +85,7 @@ if [ -n "$INSTALL_ENV" ]; then
     fi
   else
     curl -Ls "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
-    pyenv update
+    $HOME/.pyenv/bin/pyenv update
   fi
 
   set +u
