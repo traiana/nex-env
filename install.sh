@@ -79,6 +79,7 @@ fi
 if [ -n "$INSTALL_ENV" ]; then
   if [ "$CMD" == "brew" ]; then
     brew update
+    brew install gdbm sqlite xz
     if ! brew upgrade pyenv; then
       brew install pyenv
       brew install pyenv-virtualenv
