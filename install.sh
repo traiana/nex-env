@@ -1,7 +1,7 @@
 #!/bin/bash -eEu
 
-PYTHON_VERSION=3.6.9
-PYTHON_REQUIREMENTS="awscli~=1.16.0 boto3~=1.9.0 cmd2~=0.9.0 click~=7.0.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon"
+PYTHON_VERSION=3.6.10
+PYTHON_REQUIREMENTS="awscli~=1.17.0 boto3~=1.11.0 cmd2~=0.9.0 click~=7.0.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon@develop"
 
 INSTALL_PREREQS=x
 INSTALL_ENV=x
