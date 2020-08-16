@@ -1,7 +1,7 @@
 #!/bin/bash -eEu
 
-PYTHON_VERSION=3.6.10
-PYTHON_REQUIREMENTS="awscli~=1.17.0 boto3~=1.11.0 cmd2~=0.9.0 click~=7.0.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon@develop"
+PYTHON_VERSION=3.6.11
+PYTHON_REQUIREMENTS="awscli~=1.18.0 cmd2~=0.9.0 git+git://github.com/arcivanov/docker-squash@docker_rebase git+ssh://git@github.com/Traiana/nex-daemon@develop"
 
 INSTALL_PREREQS=x
 INSTALL_ENV=x
@@ -105,6 +105,6 @@ if [ -n "$INSTALL_ENV" ]; then
   pyenv activate nex
   set -u
 
-  pip install -U --force-reinstall pip~=9.0 setuptools~=39.0 wheel~=0.31
+  pip install -U pip setuptools
   pip install -U $PYTHON_REQUIREMENTS
 fi
